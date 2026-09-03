@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { Baby, HeartPulse, Lock, ShieldCheck, Stethoscope, User as UserIcon } from "lucide-react";
 import { toast } from "sonner";
@@ -233,6 +233,17 @@ export default function Login() {
               <ShieldCheck className="mt-0.5 size-4 shrink-0 text-brand-teal" />
               Only authorized health workers and administrators can access this system. All activity is
               logged in accordance with the Philippine Data Privacy Act.
+            </p>
+
+            <p className="mt-5 border-t border-brand-line pt-5 text-center text-sm text-muted-foreground">
+              New health worker?{" "}
+              <Link
+                to="/signup"
+                className="font-semibold text-brand-teal-dark hover:underline"
+                data-testid="login-signup-link"
+              >
+                Create an account
+              </Link>
             </p>
           </div>
         </div>

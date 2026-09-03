@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import AppShell from "@/components/AppShell";
 import Login from "@/pages/Login";
+import Signup from "@/pages/Signup";
 import Dashboard from "@/pages/Dashboard";
 import Patients from "@/pages/Patients";
 import PatientProfile from "@/pages/PatientProfile";
@@ -20,6 +21,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<AppShell><Dashboard /></AppShell>} />
         <Route path="/patients" element={<AppShell><Patients /></AppShell>} />
         <Route path="/patients/:id" element={<AppShell><PatientProfile /></AppShell>} />

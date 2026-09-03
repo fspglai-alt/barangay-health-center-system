@@ -12,6 +12,15 @@ shadcn (base-ui) frontend. TanStack Query for all reads/writes. Recharts for cha
 ## Auth
 - httpOnly cookie session (`bhc_session`), stored in `db.sessions`. Passwords are sha256-salted.
 - `POST /api/auth/login`, `POST /api/auth/logout`, `GET /api/auth/me`.
+- **Self sign-up**: `POST /api/auth/register` (public, no auth) — `{full_name, username, password}`.
+  Always creates a `health_worker` with `status="inactive"`; role is never client-controlled, so
+  nobody can self-register as an administrator. Returns `{message}` (201). Validation: full name >= 3,
+  username >= 3 and alnum/`.`/`_` only, password >= 6, duplicate username -> 409.
+  Login refuses any non-active account with 403 ("inactive or still pending Administrator approval"),
+  so a new signup cannot sign in until an Administrator presses **Activate** on `/users`.
+- Frontend `/signup` page collects full name, username, password + confirm (client-side match check),
+  then shows a success panel with the chosen username. Login page links to it ("Create an account").
+  `/users` shows an amber "N accounts awaiting approval" banner to admins when any account is inactive.
 - Roles: `administrator` (full access incl. user CRUD) and `health_worker` (all clinical CRUD,
   read-only on Users). `require_admin` guards user create/update/delete.
 - Frontend: `useAuth()` hook reads `/auth/me`; `AppShell` redirects to `/login` when unauthenticated.

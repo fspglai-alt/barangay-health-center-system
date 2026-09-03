@@ -55,6 +55,7 @@ export default function Users() {
   });
 
   const rows = data ?? [];
+  const pending = rows.filter((u) => u.status !== "active");
 
   return (
     <>
@@ -69,6 +70,20 @@ export default function Users() {
           ) : undefined
         }
       />
+
+      {isAdmin && pending.length > 0 && (
+        <div
+          className="flex items-start gap-2 rounded-xl border border-[#FDE68A] bg-[#FFFBEB] px-4 py-3 text-sm text-[#92400E]"
+          data-testid="pending-approval-notice"
+        >
+          <ShieldCheck className="mt-0.5 size-4 shrink-0" />
+          <span>
+            <strong>{pending.length}</strong> account{pending.length === 1 ? "" : "s"} awaiting approval.
+            Health workers who signed up themselves stay inactive until you press{" "}
+            <strong>Activate</strong> on their row.
+          </span>
+        </div>
+      )}
 
       {!isAdmin && (
         <div className="flex items-center gap-2 rounded-xl border border-[#FDE68A] bg-[#FFFBEB] px-4 py-3 text-sm text-[#92400E]" data-testid="users-readonly-notice">

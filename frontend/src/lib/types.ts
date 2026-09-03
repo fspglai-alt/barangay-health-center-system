@@ -135,6 +135,10 @@ export interface OkResponse {
   ok: boolean;
 }
 
+export interface MessageResponse {
+  message: string;
+}
+
 export const CONSULTATION_TYPES = [
   "General Consultation",
   "Prenatal Check-up",

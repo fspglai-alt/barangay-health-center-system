@@ -49,6 +49,16 @@ class LoginRequest(BaseModel):
     password: str
 
 
+class RegisterRequest(BaseModel):
+    full_name: str
+    username: str
+    password: str
+
+
+class MessageResponse(BaseModel):
+    message: str
+
+
 # ---------------------------------------------------------------- patients
 class PatientBase(BaseModel):
     full_name: str
