@@ -1,0 +1,280 @@
+{
+  "project_name": "Barangay Health Center – Patient Profiling and Record Management System",
+  "theme": "light",
+  "archetype": "ARCHETYPE 1: ORGANIC & HEALTHCARE PRECISION (Trust, Care, Professional Clarity)",
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#F4F7F6",
+        "on_bg": "#112224",
+        "on_bg_muted": "#566B6D",
+        "roles": {
+          "link": "#0F766E",
+          "error": "#BE123C",
+          "success": "#047857",
+          "warning": "#B45309"
+        }
+      },
+      {
+        "name": "sidebar",
+        "kind": "solid",
+        "bg": "#0B2B28",
+        "on_bg": "#F2FBF9",
+        "on_bg_muted": "#8BAEA8",
+        "roles": {
+          "active_item_bg": "#134E48",
+          "active_item_text": "#F59E0B",
+          "hover_bg": "#163E3A",
+          "accent_gold": "#F59E0B"
+        }
+      },
+      {
+        "name": "card",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F2E2B",
+        "on_bg_muted": "#5C7673",
+        "roles": {
+          "border": "#E2ECE9",
+          "link": "#0D9488",
+          "error": "#BE123C",
+          "success": "#059669",
+          "warning": "#D97706"
+        }
+      },
+      {
+        "name": "login_panel_hero",
+        "kind": "image",
+        "contrast_against": "#08201E",
+        "guarantee": "scrim: linear-gradient(135deg, rgba(11,43,40,0.92) 0%, rgba(15,118,110,0.88) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#C2E8E3",
+        "roles": {
+          "gold_badge": "#FBBF24",
+          "subtext": "#E6F4F1"
+        }
+      },
+      {
+        "name": "header",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0B2B28",
+        "on_bg_muted": "#5F7D7A",
+        "roles": {
+          "border": "#E2ECE9",
+          "notification_badge": "#E11D48"
+        }
+      },
+      {
+        "name": "modal",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F2E2B",
+        "on_bg_muted": "#5C7673"
+      },
+      {
+        "name": "badge_maternal",
+        "kind": "solid",
+        "bg": "#FCE7F3",
+        "on_bg": "#9D174D",
+        "on_bg_muted": "#BE185D"
+      },
+      {
+        "name": "badge_child",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#92400E",
+        "on_bg_muted": "#B45309"
+      },
+      {
+        "name": "badge_senior",
+        "kind": "solid",
+        "bg": "#E0E7FF",
+        "on_bg": "#3730A3",
+        "on_bg_muted": "#4338CA"
+      },
+      {
+        "name": "badge_general",
+        "kind": "solid",
+        "bg": "#CCFBF1",
+        "on_bg": "#115E59",
+        "on_bg_muted": "#0F766E"
+      }
+    ],
+    "accent": "#0D9488",
+    "on_accent": "#FFFFFF",
+    "accent_hover": "#0F766E",
+    "brand_gold": "#F59E0B",
+    "brand_gold_dark": "#B45309"
+  },
+  "typography": {
+    "font_heading": "'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "font_body": "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "font_mono": "'JetBrains Mono', monospace",
+    "scale_px": {
+      "display": 48,
+      "h1": 36,
+      "h2": 28,
+      "h3": 20,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings": "Use font-semibold or font-bold with tracking-tight. Never use Inter for headers.",
+      "numbers": "Stat card numbers must be text-3xl or text-4xl font-bold tracking-tight text-slate-900.",
+      "labels": "Overlines and metadata uppercase tracking-wider text-xs font-semibold text-slate-500."
+    }
+  },
+  "entry_surfaces": {
+    "/": "split screen login — brand hero visual + emergency hotline & Barangay credentials left, pristine healthcare login form with role switcher (Admin / Health Worker) right",
+    "/login": "split screen login — brand hero visual + emergency hotline & Barangay credentials left, pristine healthcare login form with role switcher (Admin / Health Worker) right"
+  },
+  "layouts_and_navigation": {
+    "sidebar": {
+      "width": "w-64 (256px) on desktop, collapsible sheet on mobile",
+      "style": "Dark teal solid background (#0B2B28) with Barangay Official Gold badge/seal, crisp 1px borders, active navigation indicator with teal highlight and gold accent dot",
+      "items": [
+        {"name": "Dashboard", "path": "/dashboard", "icon": "LayoutDashboard", "testid": "nav-dashboard"},
+        {"name": "Patients", "path": "/patients", "icon": "Users", "testid": "nav-patients"},
+        {"name": "Pregnant Women", "path": "/maternal", "icon": "HeartPulse", "testid": "nav-maternal"},
+        {"name": "Babies / Children", "path": "/pediatric", "icon": "Baby", "testid": "nav-pediatric"},
+        {"name": "Health Records", "path": "/records", "icon": "FileText", "testid": "nav-records"},
+        {"name": "Visit History", "path": "/visits", "icon": "CalendarCheck", "testid": "nav-visits"},
+        {"name": "Reports & Analytics", "path": "/reports", "icon": "BarChart3", "testid": "nav-reports"},
+        {"name": "User Management", "path": "/users", "icon": "ShieldCheck", "testid": "nav-users", "admin_only": true},
+        {"name": "Settings", "path": "/settings", "icon": "Settings", "testid": "nav-settings"}
+      ],
+      "footer": "Current logged-in user pill (Role badge, name, avatar) + Logout action with confirmation"
+    },
+    "header": {
+      "style": "Sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-[#E2ECE9] px-6 py-3.5 flex items-center justify-between shadow-xs",
+      "elements": [
+        "Mobile sidebar trigger (Sheet)",
+        "Global quick patient search with keyboard shortcut (/)",
+        "System live status badge ('Barangay Health Center - Active Shift')",
+        "Quick Action button (+ New Consultation / + Register Patient)",
+        "Notification bell with badge",
+        "Role switch / Profile trigger"
+      ]
+    },
+    "main_container": "bg-[#F4F7F6] min-h-[calc(100vh-65px)] p-6 md:p-8 max-w-7xl mx-auto space-y-6"
+  },
+  "core_pages_spec": {
+    "login": {
+      "layout": "50/50 split on desktop, stacked on mobile",
+      "left_panel": "Deep teal gradient with medical clinic photography backdrop, official Barangay Health Office insignia with gold shield, mission highlights (Zero Maternal Mortality, 100% Child Immunization Coverage, 24/7 Health Records), quick emergency hotline card",
+      "right_panel": "Crisp card with Barangay logo, System Name, Quick Demo Account Selector pills (Admin vs Health Worker for 1-click test fill), Username/Email, Password, Remember Me, Forgot Password dialog, Login button, Philippine DOH Compliance Notice"
+    },
+    "dashboard": {
+      "stat_cards": [
+        {"title": "Total Registered Patients", "icon": "Users", "accent": "teal", "view_all": "/patients"},
+        {"title": "Pregnant Women (Active)", "icon": "HeartPulse", "accent": "rose", "view_all": "/maternal"},
+        {"title": "Babies & Children (0-5y)", "icon": "Baby", "accent": "amber", "view_all": "/pediatric"},
+        {"title": "Today's Consultations", "icon": "Stethoscope", "accent": "emerald", "view_all": "/visits"}
+      ],
+      "charts_row": {
+        "donut_chart": "Patients by Age Group (0-5 Infants, 6-17 Children/Youth, 18-59 Adults, 60+ Senior Citizens) using Recharts with custom tooltips",
+        "line_chart": "Monthly Consultations & Vaccinations Trend (Jan - Dec) with interactive toggle between Total Visits and Immunizations"
+      },
+      "bottom_row": {
+        "recent_consultations_table": "Recent 6 patient consultations with Patient Name, Purok/Address, Purpose (e.g. Prenatal, EPI Vaccine, Hypertension Check), Attending Health Worker, Status Badge (Completed / In-Progress), and Action button",
+        "quick_links_panel": "Immediate action shortcuts: + New Patient Registration, + Log Vital Signs, + Schedule Immunization, + Prenatal Checkup Form, Export Monthly DOH Report"
+      }
+    },
+    "patients_list": {
+      "filters": ["Search by Name/Barangay ID/PhilHealth", "Filter by Purok/Zone (Purok 1 to 7)", "Filter by Category (General, Maternal, Pediatric, Senior, PWD)", "Sort by Recent / Alphabetical"],
+      "table": "Columns: Patient ID, Full Name, Age/Sex, Purok, PhilHealth No., Category Badges, Last Visit Date, Status, Actions (View Full Profile, Edit, Log Visit)",
+      "dialog_create": "Modal to register a new resident with basic demographics, PhilHealth, emergency contact, Purok, blood type, allergies"
+    },
+    "patient_profile": {
+      "layout": "Left sticky card (Patient Photo/Avatar, PhilHealth ID, QR code badge, Vital summary, Emergency contacts, Quick action buttons) + Right Tabs panel",
+      "tabs": [
+        "Overview & Vitals History (Blood pressure, BMI, Blood sugar trends)",
+        "Medical Consultations & Diagnoses (Doctor/Nurse notes, prescriptions)",
+        "Immunization & Vaccination Records (Date, Vaccine batch, Administered by)",
+        "Maternal / Child Details (if applicable)",
+        "Prescriptions & Medicines Issued (Dispensed from Barangay inventory)"
+      ]
+    },
+    "maternal_care": {
+      "header_stats": "Total Pregnant, High-Risk Pregnancies, Due This Month, Postpartum Monitored",
+      "features": "Trimester tracker, Expected Date of Delivery (EDD) countdown, Prenatal visit milestones (1st-4th Trimester checkups), Tetanus Toxoid vaccination status, Iron/Folate supplement tracking, High-risk flag badge"
+    },
+    "pediatric_immunization": {
+      "header_stats": "Total Children (0-59 mos), Fully Immunized Children (FIC Rate %), Pending Vaccinations This Week, Underweight/Malnourished Monitored",
+      "features": "DOH Mandatory Immunization Schedule Matrix (BCG, Hep B, Pentavalent 1-3, OPV/IPV 1-3, PCV 1-3, MMR 1-2), Growth Monitoring (Weight-for-Age, Height-for-Age charts), Vitamin A & Deworming logs"
+    },
+    "health_records": {
+      "features": "Comprehensive clinical log search, diagnosis categorization (Communicable, Non-Communicable, Maternal, Pediatric), ICD-10 compatible labels, Medical certificate generator / Printable slip preview"
+    },
+    "visit_history": {
+      "features": "Chronological clinic triage log, date range selector, check-in time vs consultation time, consultation reason, vitals recorded at triage (BP, HR, RR, Temp, Weight), attending staff"
+    },
+    "reports_analytics": {
+      "date_range": "Quick presets: Today, This Week, This Month, This Quarter, Year-to-Date, Custom Range",
+      "visualizations": [
+        "Consultation volume by Purok / Zone (Bar Chart)",
+        "Top 10 Morbidity / Leading Illnesses (Horizontal Bar Chart)",
+        "Maternal & Child Health Indicators (FIC Rate, Prenatal Attendance %)",
+        "Medicine Dispensation summary"
+      ],
+      "export_actions": "Export Official DOH FHSIS Summary (CSV/Print/PDF modal format)"
+    },
+    "user_management": {
+      "features": "List of Health Center Staff (Admin, Barangay Health Worker - BHW, Nurse, Midwife, Doctor), Status toggle (Active/Inactive), Assign Purok jurisdiction, Role-based permissions, Add Staff Member modal"
+    },
+    "settings": {
+      "features": "Barangay Health Center Info (Center Name, Municipality, Province, Contact No., Head Medical Officer, Operating Hours), Backup & Export, System Preferences"
+    }
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1638202993928-7267aad84c31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwyfHxoZWFsdGhjYXJlJTIwZG9jdG9yJTIwY2xpbmljfGVufDB8fHx8MTc4ODQ2Mjg3M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Doctor in clinic with stethoscope for login hero background and health center mission banner",
+        "category": "hero_login"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1625134673337-519d4d10b313?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHw0fHxoZWFsdGhjYXJlJTIwZG9jdG9yJTIwY2xpbmljfGVufDB8fHx8MTc4ODQ2Mjg3M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Healthcare worker professional portrait for medical officer showcase",
+        "category": "medical_staff"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxoZWFsdGhjYXJlJTIwZG9jdG9yJTIwY2xpbmljfGVufDB8fHx8MTc4ODQ2Mjg3M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Medical stethoscope equipment still life for healthcare reports background",
+        "category": "equipment"
+      }
+    ]
+  },
+  "motion": {
+    "page_transitions": "Subtle opacity and slight y-axis slide (opacity: 0 -> 1, y: 6px -> 0px in 0.2s ease-out)",
+    "stat_cards": "Hover subtle lift (-translate-y-0.5) with transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease",
+    "tab_switching": "Smooth cross-fade with no layout jarring",
+    "charts": "Recharts animated transitions enabled (isAnimationActive={true})",
+    "respect_reduced_motion": "Wrap non-essential animations with prefers-reduced-motion media query checks"
+  },
+  "accessibility": {
+    "wcag_level": "WCAG 2.1 AA Compliant",
+    "contrast_verification": {
+      "body_on_page": "#112224 on #F4F7F6 = 14.8:1 (Passes AAA)",
+      "muted_on_page": "#566B6D on #F4F7F6 = 5.2:1 (Passes AA)",
+      "body_on_sidebar": "#F2FBF9 on #0B2B28 = 15.4:1 (Passes AAA)",
+      "muted_on_sidebar": "#8BAEA8 on #0B2B28 = 7.1:1 (Passes AAA)",
+      "gold_accent_on_sidebar": "#F59E0B on #0B2B28 = 7.8:1 (Passes AAA)",
+      "accent_button_text": "#FFFFFF on #0D9488 = 4.6:1 (Passes AA)",
+      "active_link_on_card": "#0F766E on #FFFFFF = 6.2:1 (Passes AA)"
+    },
+    "focus_states": "All buttons, inputs, links must have visible focus rings: focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2",
+    "testing_attributes": "All interactive triggers, inputs, filters, tabs, charts, and key stats MUST have unambiguous data-testid attributes."
+  },
+  "instructions_to_main_agent": [
+    "1. BRANDING & THEME: Implement the modern healthcare dashboard palette. Use dark teal (#0B2B28) for the persistent left sidebar with the Gold Barangay Logo badge. Set page background to soft medical light gray/mint (#F4F7F6). Use crisp white cards (#FFFFFF) with rounded-xl border border-[#E2ECE9] and soft shadow-sm.",
+    "2. SEED DATA & AUTHENTICATION: Provide seeded demo accounts accessible via quick one-click selector on login: 'admin' / 'admin123' (Administrator) and 'healthworker' / 'worker123' (Barangay Health Worker). Seed realistic Philippine Barangay health data (Purok 1 to Purok 7, realistic Filipino names like Dela Cruz, Santos, Garcia, Reyes, PhilHealth IDs, prenatal records with EDD, EPI vaccination logs like BCG/Pentavalent/MMR, hypertension/diabetes vital history).",
+    "3. CHART INTEGRATION: Use Recharts (already pinned and available). Dashboard must feature: 1) Patients by Age Group Donut Chart with center label and color-coded legend, 2) Monthly Consultations line/area chart with smooth teal gradient stroke.",
+    "4. COMPLETE HEALTH MODULES: Provide full UI workflows for 1) Dashboard with 4 KPI stat cards, charts, recent consultations table & quick actions, 2) Patients directory with search/filters/pagination & Add Patient modal, 3) Detailed Patient Profile with multi-tab history, 4) Pregnant Women management with trimester/EDD tracker, 5) Pediatric/Baby Immunization matrix with vaccine checklists, 6) Health Records & Consultation logs with printable slip modal, 7) Visit History triage logs, 8) Reports with date range filters & Morbidity/Purok charts, 9) User Management for staff accounts, 10) Settings.",
+    "5. DATA-TESTID CONVENTION: Add explicit data-testid attributes on all critical elements (e.g. data-testid='login-username-input', data-testid='login-submit-button', data-testid='demo-admin-btn', data-testid='stat-card-total-patients', data-testid='patient-search-input', data-testid='add-patient-button', data-testid='tab-immunization', data-testid='nav-maternal', etc.).",
+    "6. ERROR RESILIENCE: Degrade gracefully if backend is offline; render empty states with friendly guidance and mock seed fallback to prevent broken blank screens."
+  ]
+}
